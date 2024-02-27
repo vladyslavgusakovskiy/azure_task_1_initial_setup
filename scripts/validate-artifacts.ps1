@@ -16,6 +16,9 @@ if (-not (Test-Path "$tempFolderPath")) {
 
 Write-Output "Downloading artifacts"
 
+if (-not $artifactsConfig.resourcesTemplate) { 
+    Write-Error "Artifact config value 'resourcesTemplate' is empty! Please make sure that you executed the script 'scripts/generate-artifacts.ps1', and commited your changes"
+} 
 Invoke-WebRequest -Uri $artifactsConfig.resourcesTemplate -OutFile "$tempFolderPath/$resourcesTemplateName" -UseBasicParsing
 
 Write-Output "Validating artifacts"
