@@ -42,9 +42,11 @@ In this task, you need to perform the following steps:
     scripts/generate-artifacts.ps1
 ``` 
 Script will promt you only for 1 parameter - name of the storage account you created when completing the pre-requirements. 
+
 2. If you want to test your solution before submitting it - run script for artifacts validation: 
 ```
     scripts/generate-artifacts.ps1
 ```
 Script should run without errors. 
+
 3. Commit your changes, and submit your solution for a review. 
