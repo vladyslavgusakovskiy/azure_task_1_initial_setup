@@ -4,7 +4,7 @@ param(
 )
 
 # default script values
-$rgName = "mate-academy"
+$rgName = "mate-resources"
 $containerName = "task-artifacts"
 $resourcesTemplateName = "exported-template.json"
 $taskName = "task1"
