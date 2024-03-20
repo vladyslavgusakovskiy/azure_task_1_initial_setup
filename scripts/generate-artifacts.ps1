@@ -18,7 +18,7 @@ if ($context)
 {  
     Write-Output "Azure Powershell module is installed, account is connected."  
 } else {  
-    Write-Error "Please log in to Azure using Azure Powershell module (run Connect-AzAccount)"
+    throw "Please log in to Azure using Azure Powershell module (run Connect-AzAccount)"
 }  
 
 Write-Output "Checking if storage account exists"
@@ -26,7 +26,7 @@ $storageAccount = Get-AzStorageAccount -Name $ArtifactsStorageAccountName -Resou
 if ($storageAccount) {
     Write-Output "Storage account found"
 } else { 
-    Write-Error "Unable to find storage account $ArtifactsStorageAccountName in the resource group $rgName. Please make sure, that you specified the correct name of the storage account"
+    throw "Unable to find storage account $ArtifactsStorageAccountName in the resource group $rgName. Please make sure, that you specified the correct name of the storage account"
 }
 
 Write-Output "Checking if artifacts storage container exists" 
@@ -34,7 +34,7 @@ $artifactContainer = Get-AzStorageContainer -Name $containerName -Context $stora
 if ($artifactContainer) { 
     Write-Output "Storage container for artifacts found!" 
 } else { 
-    Write-Error "Unable to find a storage container $containerName in the storage account $ArtifactsStorageAccountName, please make sure that it's created"
+    throw "Unable to find a storage container $containerName in the storage account $ArtifactsStorageAccountName, please make sure that it's created"
 }
 
 
