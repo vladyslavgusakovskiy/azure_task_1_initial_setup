@@ -43,7 +43,7 @@ In this task, you need to perform the following steps:
 
 2. If you want to test your solution before submitting it, run the script for artifacts validation: 
     ```
-    scripts/generate-artifacts.ps1
+    scripts/validate-artifacts.ps1
     ```
     The script should run without errors. 
 
